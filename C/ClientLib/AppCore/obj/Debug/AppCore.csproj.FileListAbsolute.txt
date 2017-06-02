@@ -1,0 +1,4 @@
+G:\src\ForFree\C\ClientLib\AppCore\bin\Debug\AppCore.dll
+G:\src\ForFree\C\ClientLib\AppCore\bin\Debug\AppCore.pdb
+G:\src\ForFree\C\C\Client\Assets\Plugins\AppCore.dll
+G:\src\ForFree\C\C\Client\Assets\Plugins\AppCore.pdb
