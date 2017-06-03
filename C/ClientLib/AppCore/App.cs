@@ -2,9 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AppCore {
-class App {
+public class App {
+    public bool CheckNet() {
+        return true;
+    }
+
+    public bool CheckVersion() {
+        return true;
+    }
+
+    public void Start() {
+    }
+    public void Close() {
+    }
 }
 }

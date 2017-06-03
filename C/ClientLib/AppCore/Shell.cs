@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AppCore {
 public class Shell {
@@ -14,9 +13,37 @@ public class Shell {
             mConfig = value;
         }
     }
-    private Configuration mConfig = new Configuration();
-    public void RestartApp() {
+
+    public App app {
+        get {
+            return mApp;
+        }
     }
+
+    public AppState state {
+        get {
+            return mAppState;
+        }
+        internal set {
+            mAppState = value;
+        }
+    }
+
+    private App mApp;
+    private Configuration mConfig = new Configuration();
+    private AppState mAppState = AppState.None;
+
+    public void RestartApp() {
+        if(mApp != null) {
+            mApp.Close();
+            mApp = null;
+        }
+        mApp = new App();
+        app.CheckNet();
+        app.CheckVersion();
+        app.Start();
+    }
+
     public void Close() {
     }
 }
