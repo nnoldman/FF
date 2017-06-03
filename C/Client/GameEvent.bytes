@@ -1,0 +1,344 @@
+module(..., package.seeall);
+
+ID=
+{
+    HeroPosition = 1,
+    KeyMoveStart = 2,
+
+    OnPathBegin = 4,
+    OnPathEnd = 5,
+    SDKInit = 6,
+	OnGameExit=7,--退出到StartUp场景时触发
+
+	OnMapChangeBegin=11,--调地图消息发来，准备跳地图，loading未显示
+	
+	HeroReady=14,--跳地图开始时为false，跳地图结束后为true
+	OnGameStart=15,--第一次跳地图时
+	OnHeroDataReady=17,--英雄数据第一次初始化时触发
+	OnSceneClose=18,
+	OnMapLoaded=19,
+	
+	OnLoginError=20,
+
+	OnPing=21,
+	OnFPSChange=22,
+
+	Skill_DragEnd=50,
+
+	AddSkill=100,--获得技能升级技能
+
+	OnLearnedSkill=101,--学习了新技能
+	SkillTrainChange=102,
+	SetSkillKeys=104,
+	ShowSkillIcon=105,
+
+	MainUserData=110,
+	RemoveLocalUnit=112,
+
+	UnitDie=120,
+
+	HeroPillEmpty=130,--药品用完
+
+	ImportantTipChange=150,--重要提示，点击才消失的那种
+	OnCancelImportantTip=151,
+
+	--战斗属性刷新
+	Hero_HP=200,
+	Hero_MP=210,
+	Hero_MaxHP=220,
+	Hero_MaxMP=230,
+
+	Hero_MinPDamage=240,
+	Hero_MaxPDamage=250,
+	Hero_PDefence=260,
+
+	Hero_MinMDamage=270,
+	Hero_MaxMDamage=280,
+	Hero_MDefence=290,
+
+	Hero_MinWDamage=300,
+	Hero_MaxWDamage=310,
+	Hero_WDefence=320,
+
+	Hero_Bang=330,
+	Hero_BangPercent=340,
+	Hero_Dodge=350,
+	Hero_Hit=360,
+	Hero_Bless=370,
+	Hero_Curse=380,
+
+	--主角数据
+	Hero_Power=500,
+	Hero_Lv=510,
+	Hero_Vip=512,
+	Hero_SuperCareer=514,
+	Hero_Exp=515,
+
+	Hero_Gold=520,
+	Hero_Salay=530,
+	Hero_Money=540,
+	Hero_Diamond=541,--钻石
+
+	Hero_InnerProperty=550,--内功属性
+	Hero_DragonSoulProperty=560,--龙魂属性
+	ArchievementChange=570,--成就
+	ArchievementAll=571,--所有成就
+	
+	EquipUpgrade=580,--装备升阶
+	EquipAttachMagicInfo=581,--附魔
+	OfficeChange=582,--官职
+	HonorTitleChange=583,--荣誉称号
+	PKModeChange=590,
+	TrunLifeChange=591,--转生
+
+
+	EquipTipPutDown=600,--点击装备tips上的放入
+	GoldEquipInfo=610,--神装信息
+
+	Hero_SetTarget=800,
+
+	AutoStateChange=899,
+
+	AutoFindPath=910,
+	AutoFindPathEnd=911,
+
+	OnTaskContentChange=1000,
+	MainTaskTip=1001,--当有主线任务可接取、可交付时自动出现此引导箭头
+	MenuTipStateChange=1002,--主菜单提醒状态改变
+
+	TaskDialogContent=1010,
+	OnTaskDelete=1020,
+	OnDailyTaskChange=1021,
+	OnDailyTimesChange=1022,
+
+	OnLetterTaskChange=1030,
+
+	OpenedCellChange=1090,
+
+	ItemAdd=1100,
+	ItemDelete=1110,
+	ItemDeleteEnd=1111,
+	ItemRefresh=1120,
+	ItemMove=1130,
+	BagItemCountChange=1140,
+	OnItemCDBegin=1150,
+
+	OnTakeOnEquip=1200,
+	OnTakeOffEquip=1210,
+
+	OnAddEquip=1240,
+	OnDestroyEquip=1241,
+
+
+	OnAddMail=1300,
+	OnMailContent=1310,
+	OnClearMail=1320,
+	OnDelMail=1330,
+	Client_MailSelectAll=1340,
+	Client_MailDeleteSelect=1341,
+	OnReadyReplyMail=1342,--回复邮件
+	OnNewMail=1343,--新邮件
+	OnMailUIShow=1344,--打开了邮件界面
+
+	OnChat=1400,
+	OnChatOnWindow=1401,
+	SendItemToChat=1402,
+	WhisperToChatWindow=1403,
+
+	OnChat_System_Game=1404,--左边提示
+	OnChat_System_TV=1405,--TV提示
+
+	OptionChange=1500,
+
+	OnBufferStateChange=1600,
+	OnClearBufferState=1610,
+	OnBufferValueChange=1620,
+
+	--副本
+	OnEnterQuest=1649,
+	OnCanentertimes=1650,
+	ChangeInstance=1651,
+	OnInstanceBuytimes=1652,
+	OnSkyInfoUpdata=1653,
+
+	--竞技场
+	OnArenaPlayersChange=1700,
+	OnArenaRecords=1701,
+	OnArenaFightSequence=1702,
+	OnArenaGameStart=1703,
+	OnArenaGameOver=1704,
+	OnArenaPlayerHPChange=1705,
+	OnArenaScoreChange=1706,
+	OnArenaTimesChange=1707,
+
+	--社交
+	OnFriend_Require=1708,
+	OnFriendChange=1709,
+	OnFriendAcceptAll=1710,
+	OnFriendAddAll=1711,
+	OnFriendOnLineStateChange=1712,
+	OnFriendAddEvent=1713,
+
+	--组队
+	OnTeamChangeMember=1720,
+	OnTeam_RequireJoin=1721,
+
+	--帮会
+	OnFactionMemberChange=1750,
+	OnFactionMemberStateChange=1751,
+	OnFactionApplyMembersChange=1752,
+	OnFactionsChange=1753,
+	OnFactionBaseInfoChange=1754,
+	OnFactionMyApplyChange=1755,
+	OnApplyNotify=1756,
+	OnFactionLogChange=1757,
+	OnStoreChange=1758,
+	OnFactionShopChange=1759,
+	OnFactionQuestStateChange=1760,
+	OnLeaveFaction=1761,
+	OnFactionRedPacket=1762,--皇榜红包
+	OnEmporerFactionChange=1763,--皇帮
+	OnWorshipRet=1764,--膜拜刷经验。。。。。
+
+	OnPopMsgBottom=1800,
+
+
+	--福利
+	OnOnlineRwdBatch=1901,
+	EveryDayRwdBatch=1902,
+	LevelUpRwdBatch=1903,
+	ResourceRwdBatch=1904,
+
+	OnActivityStart=1904,
+	OnActivityStop=1905,
+
+	OnTakeTreasurePosChange=1906,
+	OnNo1Registed=1907,
+	OnNo1PlayerCountChange=1908,
+	
+		SevendaydBatch=1909,
+
+	--BOSS
+	OnBossListBatch=1910,
+
+	--多选宝箱机制
+	DuoxuandBatch=1911,
+
+	--每日活力
+	OnActiveUpdata=1920,
+	OnActiveAwardUpdata=1921,
+
+	--更新顶部图标
+	UpdataTopIconNum=1930,
+	ResetTopIcon=1931,
+
+	OpenFunctionSingle=1932,--开启单个功能
+
+	VipBatch=1933,
+	HideTopIcon=1934,
+
+	--充值返利
+	OnTotleCharge=1940,
+	OnEverydayCharge=1941,
+	OnInvestmentCharge=1942,
+
+	--宝藏
+	OnTreasurePoint=1950,
+	OnTreasureOtherInfo=1951,
+	OnTreasureBagInfo=1952,
+	OnTreasureResult=1953,
+	OnTreasureSelfInfo=1954,
+
+	--金银会员
+	OnDiamondPrivilegeUp1=1960,
+	OnDiamondPrivilegeUp2=1961,
+
+	--开服特惠礼包
+	OnNewZoneBatch=1970,
+	
+	OnChargeBack=1976,
+
+	--开服竞技
+	OnOpenZoneChangeIndex=2000,
+	OnOpenZoneLevelChange=2001,
+	OnOpenZonePowerChange=2002,
+	OnOpenZoneDigTreasureChange=2003,
+	OnOpenZoneMadelChange=2004,
+	OnOpenZoneGemChange=2005,
+	OnOpenZoneFEChange=2006,
+	OnOpenZoneGodRingChange=2007,
+	OnOpenZoneGodEmperorChange=2008,
+
+	--更新充值
+	OnRechargesUpdata=2011,
+
+
+	--上下马状态
+	OnRideHorse=2021,
+	OnDismount=2022,
+	UpdateHorse=2023,
+
+	OnGodBattle=2031,
+
+	OnLionRidgeInfo=2041,
+
+	OnTopIconArenaChange=2051,
+
+	--翅膀
+	OnGodWingInfo=2061,
+
+	--英雄试炼
+	OnHeroTrialCount=2071,
+
+	LoginServerChange=10000,
+
+	Count,
+}
+
+
+EventTable={}
+CurrentID=0
+function _M:Clear()
+	EventTable=nil
+end
+
+function _M:Trigger(id,arg1,arg2,arg3)
+	-- if id==1904 or id==1905 then
+		-- print("GameEvent:Trigger",id)
+	-- end
+	self:OnGameEvent(id,arg1,arg2,arg3)
+end
+
+function _M:OnGameEvent(id,arg1,arg2,arg3)
+	CurrentID=id
+	local arr=EventTable[id]
+
+	if arr~=nil then
+		for k,v in pairs(arr) do
+			if v.fun~=nil then
+				v.fun(v.inst,arg1,arg2,arg3)
+			else
+				local fun=v.inst["OnEvent"]
+				if fun~=nil then fun(v.inst,id,arg1,arg2,arg3) end
+			end
+		end
+	end
+end
+
+function _M:Add(instance,id,func)
+	local arr=EventTable[id]
+	if arr==nil then
+		arr={}
+		EventTable[id]=arr
+	end
+	local t={inst=instance,fun=func}
+	table.insert(arr,t)
+end
+
+function _M:Remove(instance)
+	for k,v in pairs(EventTable) do
+		for k2,v2 in pairs(v) do
+			if v2.inst==instance then v[k2]=nil end
+		end
+	end
+end

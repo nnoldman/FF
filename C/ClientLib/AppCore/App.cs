@@ -14,8 +14,17 @@ public class App {
     }
 
     public void Start() {
+        UIManager.Instance = new UIManager();
     }
     public void Close() {
+    }
+    public void OnSceneOpen() {
+    }
+    public void OnSceneClose() {
+    }
+    public void OnMapLoaded() {
+    }
+    public void OnHeroReady() {
     }
 }
 }

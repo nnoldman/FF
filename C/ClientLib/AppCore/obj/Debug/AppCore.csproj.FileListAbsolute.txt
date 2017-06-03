@@ -1,7 +1,3 @@
-G:\src\ForFree\C\ClientLib\AppCore\bin\Debug\AppCore.dll
-G:\src\ForFree\C\ClientLib\AppCore\bin\Debug\AppCore.pdb
-G:\src\ForFree\C\C\Client\Assets\Plugins\AppCore.dll
-G:\src\ForFree\C\C\Client\Assets\Plugins\AppCore.pdb
 D:\src\FF\ForFree\C\Client\Assets\Plugins\AppCore.dll
 D:\src\FF\ForFree\C\Client\Assets\Plugins\AppCore.pdb
 D:\src\FF\ForFree\C\ClientLib\AppCore\obj\Debug\AppCore.dll

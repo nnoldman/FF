@@ -1,5 +1,0 @@
-G:\project\rust\App\App\bin\Debug\AppCore.dll
-G:\project\rust\App\App\bin\Debug\AppCore.pdb
-G:\project\rust\App\App\obj\Debug\App.csprojResolveAssemblyReference.cache
-G:\project\rust\App\App\obj\Debug\AppCore.dll
-G:\project\rust\App\App\obj\Debug\AppCore.pdb
