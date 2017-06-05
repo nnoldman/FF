@@ -11,13 +11,15 @@ public class UIManager: IManager {
         get;
     }
 
-    public void Show<T>() where T : WindowBase {
+    public ProgressView currentProgressView;
+
+    public void Show<T>() where T : View {
     }
 
-    public void Hide<T>() where T : WindowBase {
+    public void Hide<T>() where T : View {
     }
 
-    public T Get<T>() where T : WindowBase {
+    public T Get<T>() where T : View {
         return default(T);
     }
 

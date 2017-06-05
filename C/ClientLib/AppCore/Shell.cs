@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ public class Shell {
             return mApp;
         }
     }
+    public ProgressView updataView;
 
     public AppState state {
         get {
@@ -33,15 +35,24 @@ public class Shell {
     private Configuration mConfig = new Configuration();
     private AppState mAppState = AppState.None;
 
-    public void RestartApp() {
+    public IEnumerator RestartApp() {
+        bool updata = false;
         if(mApp != null) {
             mApp.Close();
             mApp = null;
+        } else {
+            updata = true;
         }
+        yield return null;
         mApp = new App();
-        app.CheckNet();
-        app.CheckVersion();
+        if(updata) {
+            app.CheckNet();
+            yield return null;
+            app.CheckVersion();
+            yield return null;
+        }
         app.Start();
+        yield return null;
     }
 
     public void Close() {

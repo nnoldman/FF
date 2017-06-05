@@ -3,19 +3,18 @@ using System.Collections;
 using AppCore;
 public class Startup : MonoBehaviour {
     public Shell shell;
+
     void Awake() {
         shell = new Shell();
-        shell.RestartApp();
-        var state = shell.state;
-        UIManager.Instance
+        StartCoroutine(shell.RestartApp());
     }
-    // Use this for initialization
+
     void Start() {
+        var state = shell.state;
+        UIManager.Instance.Initialize();
     }
 
-    // Update is called once per frame
     void Update() {
-
     }
 }
 
