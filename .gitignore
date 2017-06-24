@@ -1,3 +1,5 @@
 /C/Client/Library/metadata/00
 /C/Client/Library
 /C/Client/Temp
+/C/Client/*.csproj
+/C/ClientLib/AppCore/obj/Debug/*.cache
