@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public abstract class ControllerBase {
+public abstract class SystemController {
     public abstract bool Initialize();
     public abstract void Update();
     public virtual void OnDestroy() { }

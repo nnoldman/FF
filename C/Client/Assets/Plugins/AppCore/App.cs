@@ -17,7 +17,9 @@ public class App {
     }
 
     public IEnumerator Start() {
-
+        yield return 0;
+    }
+    public IEnumerator Close() {
         yield return 0;
     }
 
@@ -29,8 +31,7 @@ public class App {
         yield return null;
     }
 
-    public void Close() {
-    }
+
     public void OnSceneOpen() {
     }
     public void OnSceneClose() {

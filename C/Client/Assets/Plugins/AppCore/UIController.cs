@@ -1,5 +1,6 @@
 ﻿using FairyGUI;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace AppCore {
 
-public class UIController: ControllerBase {
+public class UIController: GameController {
     public static UIController Instance {
         internal set;
         get;
@@ -16,6 +17,7 @@ public class UIController: ControllerBase {
     public ProgressView currentProgressView;
 
     public Dictionary<string, ViewBase> mViews = new Dictionary<string, ViewBase>();
+
 
     public T Show<T>() where T : ViewBase, new() {
         T ret = Get<T>();
@@ -45,9 +47,12 @@ public class UIController: ControllerBase {
     }
 
     public T LoadView<T>(string name) where T : ViewBase, new () {
-        var sceneObject = Loader.Instance.CreateObject<GameObject>(name);
-        if (!sceneObject)
+        var sceneObject = Loader.Instance.Create<GameObject>("GUI/" + name);
+        if (!sceneObject) {
+            Debug.LogError("Error Path:" + "GUI" + name);
             return null;
+        }
+        sceneObject.name = name;
         var panel = sceneObject.GetComponent<UIPanel>();
         if (panel == null)
             return null;
@@ -56,12 +61,13 @@ public class UIController: ControllerBase {
         return ret;
     }
 
-    public override bool Initialize() {
+    public override IEnumerator Initialize() {
         GRoot.inst.SetContentScaleFactor(1136, 640);
-        return true;
+        yield return null;
     }
 
-    public override void Update() {
+    public override IEnumerator CloseGameStage() {
+        yield return null;
     }
 }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class InputController : ControllerBase {
+public class InputController : SystemController {
     public override bool Initialize() {
         throw new NotImplementedException();
     }

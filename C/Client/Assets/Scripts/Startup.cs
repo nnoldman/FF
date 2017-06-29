@@ -2,12 +2,9 @@
 using System.Collections;
 using AppCore;
 public class Startup : MonoBehaviour {
-    public Flow shell;
-
     void Awake() {
-        shell = new Flow();
-        shell.onStartEnd += OnStartEnd;
-        StartCoroutine(shell.Restart());
+        Flow.Instance.onStartEnd += OnStartEnd;
+        StartCoroutine(Flow.Instance.Restart());
     }
 
     IEnumerator OnStartEnd() {
