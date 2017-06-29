@@ -3,3 +3,6 @@
 /C/Client/Temp
 /C/Client/*.csproj
 /C/ClientLib/AppCore/obj/Debug/*.cache
+/C/ClientLib/.vs/App/v14/*.suo
+/C/ClientLib/.vs/ClientLib/v14/*.suo
+/C/Client/.vs/Client/v14/*.suo

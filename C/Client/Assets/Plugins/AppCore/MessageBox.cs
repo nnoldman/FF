@@ -4,6 +4,6 @@ using System.Linq;
 using System.Text;
 
 namespace AppCore {
-public class MessageBox: View {
+public class MessageBox: ViewBase {
 }
 }

@@ -8,22 +8,22 @@ namespace AppCore {
 public class App {
     private SceneParam mSceneParam;
 
-    public bool CheckNet() {
-        return true;
+    public IEnumerator CheckNet() {
+        yield return 0;
     }
 
-    public bool CheckVersion() {
-        return true;
+    public IEnumerator CheckVersion() {
+        yield return 0;
     }
 
-    public void Start() {
-        UIManager.Instance = new UIManager();
+    public IEnumerator Start() {
+
+        yield return 0;
     }
 
     public IEnumerator LoadScene(SceneParam param) {
         mSceneParam = param;
         OnSceneClose();
-        yield return null;
         yield return null;
         OnSceneOpen();
         yield return null;

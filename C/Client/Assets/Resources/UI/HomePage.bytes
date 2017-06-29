@@ -1,0 +1,19 @@
+ikgk1.xml|751|<component size="1136,400" adaptationTest="FitSize">
+  <displayList>
+    <image id="n1_ikgk" name="n1" src="ikgk0" xy="313,117"/>
+    <component id="n2_ikgk" name="login" src="rpmb17" pkg="9leh0eyf" xy="389,253">
+      <Button title="登陆"/>
+    </component>
+    <component id="n3_ikgk" name="exit" src="rpmb17" pkg="9leh0eyf" xy="582,251">
+      <Button title="退出"/>
+    </component>
+    <text id="n6_ikgk" name="user" xy="507,153" size="186,27" input="true" maxLength="30" keyboardType="4" fontSize="12" color="#ffffff" autoSize="none" text="1234341"/>
+    <text id="n8_ikgk" name="psw" xy="509,218" size="186,27" input="true" maxLength="30" keyboardType="4" fontSize="12" color="#ffffff" autoSize="none" text="1234341"/>
+  </displayList>
+</component>package.xml|352|<packageDescription id="zbmfvjnx" name="HomePage" scrollBarRes="ui://9leh0eyfi3s65w,ui://9leh0eyfi3s65i">
+  <resources>
+    <image id="ikgk0" name="1" path="/" size="495,183"/>
+    <component id="ikgk1" name="Main" path="/" size="1136,400" exported="true"/>
+    <atlas id="atlas0" size="512,256" file="atlas0.png"/>
+  </resources>
+</packageDescription>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace AppCore {
-public class ProgressView: View {
+public class ProgressView: ViewBase {
     public float progress {
         get {
             return mProgress;

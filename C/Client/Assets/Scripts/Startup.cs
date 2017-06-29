@@ -2,19 +2,17 @@
 using System.Collections;
 using AppCore;
 public class Startup : MonoBehaviour {
-    public Shell shell;
+    public Flow shell;
 
     void Awake() {
-        shell = new Shell();
-        StartCoroutine(shell.RestartApp());
+        shell = new Flow();
+        shell.onStartEnd += OnStartEnd;
+        StartCoroutine(shell.Restart());
     }
 
-    void Start() {
-        var state = shell.state;
-        UIManager.Instance.Initialize();
-    }
-
-    void Update() {
+    IEnumerator OnStartEnd() {
+        UIController.Instance.Show<HomePageWindow>();
+        yield return null;
     }
 }
 
