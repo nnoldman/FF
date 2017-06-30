@@ -27,10 +27,10 @@ namespace HomePage
 		{
 			base.ConstructFromXML(xml);
 
-			login = (GButton)this.GetChildAt(1);
-			exit = (GButton)this.GetChildAt(2);
-			user = (GTextInput)this.GetChildAt(3);
-			psw = (GTextInput)this.GetChildAt(4);
+			login = (GButton)this.GetChild("login");
+			exit = (GButton)this.GetChild("exit");
+			user = (GTextInput)this.GetChild("user");
+			psw = (GTextInput)this.GetChild("psw");
 		}
 	}
 }

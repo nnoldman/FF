@@ -8,6 +8,8 @@ public class HomePageWindow: View<LoginSystem> {
     HomePage.Main mWindow;
 
     protected override void OnInit() {
+        base.OnInit();
+        Basics.BasicsBinder.BindAll();
         HomePage.HomePageBinder.BindAll();
         //mWindow = HomePage.Main.CreateInstance();
         //this.contentPane = mWindow.asCom;

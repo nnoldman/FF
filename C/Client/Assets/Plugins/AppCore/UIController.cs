@@ -58,11 +58,13 @@ public class UIController: GameController {
             return null;
         T ret = new T();
         ret.panel = panel;
+        GRoot.inst.AddChild(ret);
         return ret;
     }
 
     public override IEnumerator Initialize() {
         GRoot.inst.SetContentScaleFactor(1136, 640);
+        UIPackage.AddPackage("UI/Basics");
         yield return null;
     }
 

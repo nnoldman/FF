@@ -23,7 +23,7 @@ public class Flow {
         get;
         set;
     }
-    public App app {
+    public Game game {
         get;
         set;
     }
@@ -60,16 +60,17 @@ public class Flow {
             yield return Loader.Instance.Initialize();
             yield return Updater.Instance.Initialize();
         } else {
-            yield return app.Close();
-            yield return this.Close();
+            yield return game.Close();
+            yield return this.CloseGameStage();
         }
 
-        app = new App();
+        game = new Game();
+
         if(mStarted) {
-            yield return app.CheckNet();
-            yield return app.CheckVersion();
+            yield return game.CheckNet();
+            yield return game.CheckVersion();
         }
-        yield return app.Start();
+        yield return game.Start();
 
         if (onStartEnd != null)
             yield return onStartEnd.Invoke();
@@ -77,7 +78,7 @@ public class Flow {
         yield return null;
     }
 
-    public IEnumerator Close() {
+    public IEnumerator CloseGameStage() {
         yield return UIController.Instance.CloseGameStage();
         yield return Loader.Instance.CloseGameStage();
         yield return Updater.Instance.CloseGameStage();

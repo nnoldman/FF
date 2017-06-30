@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>5.3.6f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -70,10 +68,7 @@
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>Assets\3rd\Plugins\FairyGUI\DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="FairyGUI">
-      <HintPath>Assets\3rd\Plugins\FairyGUI\FairyGUI.dll</HintPath>
+      <HintPath>Assets\Plugins\3rd\DOTween.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -111,12 +106,13 @@
     <Compile Include="Assets\Scripts\Game\UI\Basics\Dropdown2.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Basics\GridItem.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Basics\GridItem2.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\Basics\Main.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Basics\WindowA.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Basics\WindowB.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Basics\WindowFrame.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Basics\WindowFrameB.cs" />
-    <Compile Include="Assets\Scripts\Game\UI\HomePage\HomePageWindow.cs" />
     <Compile Include="Assets\Scripts\Game\UI\HomePage\HomePageBinder.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\HomePage\HomePageWindow.cs" />
     <Compile Include="Assets\Scripts\Game\UI\HomePage\Main.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Login\LoginError.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Login\LoginResult.cs" />
@@ -125,7 +121,11 @@
     <Compile Include="Assets\Scripts\Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Plugins\UnityEngine.xml" />
+    <None Include="Assets\Resources\Fairy\Shaders\AddOn\FairyGUI-BlurFilter.shader" />
+    <None Include="Assets\Resources\Fairy\Shaders\FairyGUI-BMFont.shader" />
+    <None Include="Assets\Resources\Fairy\Shaders\FairyGUI-Image.shader" />
+    <None Include="Assets\Resources\Fairy\Shaders\FairyGUI-Text-Brighter.shader" />
+    <None Include="Assets\Resources\Fairy\Shaders\FairyGUI-Text.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

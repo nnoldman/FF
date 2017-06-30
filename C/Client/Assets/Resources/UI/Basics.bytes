@@ -160,6 +160,8 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     </image>
   </displayList>
   <Button/>
+</component>f2ax74.xml|56|<component size="640,890">
+  <displayList/>
 </component>fjqr7j.xml|165|<component size="90,23" extention="ProgressBar">
   <displayList>
     <image id="n0" name="bar" src="fjqr7k" xy="0,0"/>
@@ -216,6 +218,25 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     <image id="n8" name="bar" src="gzpr80" xy="0,0" fillMethod="radial360"/>
   </displayList>
   <ProgressBar/>
+</component>hixt1j.xml|992|<component size="163,69" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n5" name="n5" src="hixt1k" xy="-5,-2">
+      <gearDisplay controller="button" pages="1,3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1" name="n1" src="hixt1l" xy="-3,-1" size="169,72">
+      <gearDisplay controller="button" pages="0,2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <loader id="n4" name="icon" xy="0,4" size="163,61" align="center" vAlign="middle">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+    <text id="n3" name="title" xy="0,3" size="163,63" fontSize="22" color="#ffffff" align="center" vAlign="middle" autoSize="none" bold="true" strokeColor="#003c49" demoText="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+  </displayList>
+  <Button/>
 </component>hixt1m.xml|1037|<component size="1136,570">
   <displayList>
     <graph id="n1" name="n1" xy="42,102" size="100,100" type="rect"/>
@@ -491,7 +512,7 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     <text id="n27" name="n27" xy="972,61" size="148,26" fontSize="22" ubb="true" strokeColor="#000000" text="[color=#3399FF,#3399FF,#FFFFFF,#FFFFFF]Gradient Text[/color]"/>
     <text id="n28" name="n28" xy="475,92" size="181,26" fontSize="22" color="#ffffff" align="center" vAlign="middle" strokeColor="#000000" shadowColor="#000000" shadowOffset="3,3" text="Text with shadow"/>
   </displayList>
-</component>package.xml|16981|<packageDescription id="9leh0eyf" name="Basics" scrollBarRes="ui://9leh0eyfi3s65w,ui://9leh0eyfi3s65i">
+</component>package.xml|17417|<packageDescription id="9leh0eyf" name="Basics" scrollBarRes="ui://9leh0eyfi3s65w,ui://9leh0eyfi3s65i">
   <resources>
     <component id="a7vt7n" name="GridItem" path="/components/" size="505,35"/>
     <component id="atih7o" name="GridItem2" path="/components/" size="505,50"/>
@@ -499,10 +520,12 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     <component id="es412z" name="Component1" path="/components/" size="224,310"/>
     <component id="eut94u" name="Slider1" path="/components/" size="480,45"/>
     <component id="eut94x" name="Button13" path="/components/" size="50,50"/>
+    <component id="f2ax74" name="Component4" path="/components/" size="640,890"/>
     <component id="fjqr7j" name="Component11" path="/components/" size="90,23"/>
     <component id="fou97r" name="Component13" path="/components/" size="400,400"/>
     <component id="gojg7s" name="Button16" path="/components/" size="100,100"/>
     <component id="gxip82" name="Component14" path="/components/" size="282,500"/>
+    <component id="hixt1j" name="Button10" path="/components/" size="163,69"/>
     <component id="i3s65k" name="ScrollUpButton" path="/scrollbars/" size="17,20"/>
     <component id="i3s65o" name="ScrollDownButton" path="/scrollbars/" size="17,20"/>
     <component id="i3s65s" name="GripButton_HZ" path="/scrollbars/" size="20,17"/>
@@ -573,6 +596,8 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     <image id="gojg7t" name="22" path="/images/" size="97,97"/>
     <image id="gzpr80" name="Shape 1 copy 4" path="/images/" size="99,99"/>
     <image id="h5p722" name="i256" path="/images/" size="90,90"/>
+    <image id="hixt1k" name="b4" path="/images/" size="173,74" scale="9grid" scale9grid="40,17,80,34"/>
+    <image id="hixt1l" name="b5" path="/images/" size="163,69" scale="9grid" scale9grid="40,17,80,34"/>
     <image id="i3s65j" name="s10.png" path="/images/" size="17,20"/>
     <image id="i3s65l" name="s6.png" path="/images/" size="11,7"/>
     <image id="i3s65m" name="s4.png" path="/images/" size="11,7"/>
@@ -670,7 +695,7 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     <movieclip id="t9fj5f" name="pet" path="/images/" size="84,74"/>
     <component id="796x7a" name="WindowB" path="/" size="400,203" exported="true"/>
     <component id="c2z47l" name="Demo_Grid" path="/" size="1136,570" exported="true"/>
-    <component id="es412y" name="Demo_Clip&amp;Scroll" path="/" size="1136,570" exported="true"/>
+    <component id="es412y" name="Demo_Clip_Scroll" path="/" size="1136,570" exported="true"/>
     <component id="fou97q" name="Demo_Depth" path="/" size="1136,570" exported="true"/>
     <component id="gx2b76" name="Demo_Popup" path="/" size="1136,570" exported="true"/>
     <component id="gx2b77" name="Demo_Window" path="/" size="640,400" exported="true"/>
@@ -682,8 +707,9 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     <component id="l6f473" name="WindowA" path="/" size="400,400" exported="true"/>
     <component id="mulj7p" name="Component12" path="/components/" size="400,297" exported="true"/>
     <component id="nz0z1z" name="Demo_Text" path="/" size="1136,570" exported="true"/>
-    <component id="rpmb17" name="Button9" path="/components/" size="159,52" exported="true"/>
+    <component id="rpmb17" name="Button9" path="/" size="159,52" exported="true"/>
     <component id="rpmb1b" name="Demo_Button" path="/" size="1136,570" exported="true"/>
+    <component id="rpmb1c" name="Main" path="/" size="1136,640" exported="true"/>
     <component id="rt103s" name="Demo_ComboBox" path="/" size="1136,570" exported="true"/>
     <component id="sner1i" name="Demo_Image" path="/" size="1136,570" exported="true"/>
     <component id="t24n7f" name="Demo_Component" path="/" size="1136,570" exported="true"/>
@@ -856,21 +882,21 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     </image>
   </displayList>
   <Button mode="Check"/>
-</component>rpmb17.xml|1248|<component size="159,52" extention="Button">
-  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="1"/>
+</component>rpmb17.xml|1208|<component size="159,52" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
   <displayList>
     <image id="n1" name="n1" src="rpmbs" xy="0,0">
       <gearDisplay controller="button" pages="0"/>
-      <gearLook controller="button" pages="0,2" values="1.00,0,0|0.00,0,0" default="1.00,0,0" tween="true" ease="Quad.Out" duration="0.5"/>
+      <gearLook controller="button" pages="0,2" values="1,0,0|0,0,0" default="1,0,0" tween="true" duration="0.5"/>
       <relation target="" sidePair="width-width,height-height"/>
     </image>
     <image id="n2" name="n2" src="rpmbr" xy="0,0">
       <gearDisplay controller="button" pages="1,3"/>
       <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <image id="n3" name="n3" src="rpmbt" xy="0,0">
+    <image id="n3" name="n3" src="rpmbt" xy="0,0" alpha="0">
       <gearDisplay controller="button" pages="2"/>
-      <gearLook controller="button" pages="0,2" values="0.00,0,0|1.00,0,0" default="1.00,0,0" tween="true" ease="Quad.Out" duration="0.5"/>
+      <gearLook controller="button" pages="0,2" values="0,0,0|1,0,0" default="1,0,0" tween="true" duration="0.5"/>
       <relation target="" sidePair="width-width,height-height"/>
     </image>
     <text id="n5" name="title" xy="0,7" size="159,45" fontSize="18" color="#dfb536" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" text="">
@@ -1013,6 +1039,90 @@ dyz47i.xml|1109|<component size="180,70" extention="Button">
     <component id="n38" name="n38" src="iehu7x" xy="870,437" grayed="true">
       <Button checked="true"/>
     </component>
+  </displayList>
+</component>rpmb1c.xml|3927|<component size="1136,640" overflow="hidden">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <graph id="n26" name="n26" xy="0,70" size="1136,570" type="rect" lineSize="0" fillColor="#ff9f9f9f">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n25" name="container1" src="f2ax74" xy="-1143,70" size="1136,570">
+      <gearDisplay controller="c1" pages="1"/>
+      <gearXY controller="c1" pages="0" values="-1143,70" default="0,70" tween="true"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <graph id="n21" name="n21" xy="0,0" size="1136,70" type="rect" fillColor="#ff006699">
+      <relation target="" sidePair="width-width"/>
+    </graph>
+    <component id="n22" name="btn_Back" src="hixt1j" xy="963,-1">
+      <relation target="" sidePair="right-right"/>
+      <Button title="&lt;&lt;Back"/>
+    </component>
+    <component id="n2" name="btn_Button" src="hixt1j" xy="462,298" group="n23">
+      <Button title="Button"/>
+    </component>
+    <component id="n3" name="btn_Image" src="hixt1j" xy="274,100" group="n23">
+      <Button title="Image"/>
+    </component>
+    <component id="n4" name="btn_Graph" src="hixt1j" xy="86,100" group="n23">
+      <Button title="Graph"/>
+    </component>
+    <component id="n5" name="btn_MovieClip" src="hixt1j" xy="462,100" group="n23">
+      <Button title="MovieClip"/>
+    </component>
+    <component id="n6" name="btn_Depth" src="hixt1j" xy="650,397" group="n23">
+      <Button title="Depth"/>
+    </component>
+    <component id="n7" name="btn_Loader" src="hixt1j" xy="838,100" group="n23">
+      <Button title="Loader"/>
+    </component>
+    <component id="n8" name="btn_List" src="hixt1j" xy="86,199" group="n23">
+      <Button title="List"/>
+    </component>
+    <component id="n9" name="btn_ProgressBar" src="hixt1j" xy="86,397" group="n23">
+      <Button title="ProgressBar"/>
+    </component>
+    <component id="n10" name="btn_Slider" src="hixt1j" xy="838,298" group="n23">
+      <Button title="Slider"/>
+    </component>
+    <component id="n11" name="btn_ComboBox" src="hixt1j" xy="650,298" group="n23">
+      <Button title="ComboBox"/>
+    </component>
+    <component id="n12" name="btn_Clip_Scroll" src="hixt1j" xy="838,199" size="163,69" group="n23">
+      <Button title="Clip&amp;Scroll"/>
+    </component>
+    <component id="n13" name="btn_Controller" src="hixt1j" xy="462,199" group="n23">
+      <Button title="Controller"/>
+    </component>
+    <component id="n14" name="btn_Relation" src="hixt1j" xy="650,199" group="n23">
+      <Button title="Relation"/>
+    </component>
+    <component id="n17" name="btn_Label" src="hixt1j" xy="274,298" group="n23">
+      <Button title="Label"/>
+    </component>
+    <component id="n18" name="btn_Popup" src="hixt1j" xy="274,397" group="n23">
+      <Button title="Popup"/>
+    </component>
+    <component id="n19" name="btn_Window" src="hixt1j" xy="462,397" group="n23">
+      <Button title="Window"/>
+    </component>
+    <component id="n20" name="btn_Drag_Drop" src="hixt1j" xy="838,397" group="n23">
+      <Button title="Drag&amp;Drop"/>
+    </component>
+    <component id="n27" name="btn_Component" src="hixt1j" xy="86,298" group="n23">
+      <Button title="Component"/>
+    </component>
+    <component id="n28" name="btn_Grid" src="hixt1j" xy="274,199" group="n23">
+      <Button title="Grid"/>
+    </component>
+    <component id="n29" name="btn_Text" src="hixt1j" xy="650,100" group="n23">
+      <Button title="Text"/>
+    </component>
+    <group id="n23" name="btns" xy="86,100" size="915,366" advanced="true">
+      <gearDisplay controller="c1" pages="0"/>
+      <gearXY controller="c1" pages="0,1" values="86,100|1159,100" tween="true"/>
+    </group>
+    <text id="n24" name="n24" xy="13,12" size="276,50" font="微软雅黑" fontSize="35" color="#ff9900" bold="true" text="FairyGUI-Demo"/>
   </displayList>
 </component>rpmbz.xml|946|<component size="85,25" extention="Button">
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
