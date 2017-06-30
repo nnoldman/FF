@@ -5,19 +5,21 @@ using System.Text;
 using UnityEngine;
 
 public class HomePageWindow: View<LoginSystem> {
-    HomePage.Main mWindow;
+    HomePage.Main window {
+        get {
+            return (HomePage.Main)this.panel.ui;
+        }
+    }
+
+    public HomePageWindow() {
+        HomePage.HomePageBinder.BindAll();
+    }
 
     protected override void OnInit() {
-        base.OnInit();
-        Basics.BasicsBinder.BindAll();
-        HomePage.HomePageBinder.BindAll();
-        //mWindow = HomePage.Main.CreateInstance();
-        //this.contentPane = mWindow.asCom;
-        //mWindow.login.onClick.Add(Login);
-        //mWindow.exit.onClick.Add(Application.Quit);
+        window.login.onClick.Add(Login);
     }
 
     void Login() {
-        controller.Login(mWindow.user.text, mWindow.psw.text);
+        controller.Login(window.user.text, window.psw.text);
     }
 }
