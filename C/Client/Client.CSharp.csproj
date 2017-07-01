@@ -78,16 +78,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Game\CreateRoleWindow.cs" />
     <Compile Include="Assets\Scripts\Game\GameBase\CommandID.cs" />
     <Compile Include="Assets\Scripts\Game\GameBase\Commands.cs" />
     <Compile Include="Assets\Scripts\Game\GameBase\GameEvents.cs" />
     <Compile Include="Assets\Scripts\Game\GameBase\GameSystem.cs" />
     <Compile Include="Assets\Scripts\Game\GameBase\View.cs" />
-    <Compile Include="Assets\Scripts\Game\GameController.cs" />
-    <Compile Include="Assets\Scripts\Game\GameFlowController.cs" />
     <Compile Include="Assets\Scripts\Game\MessageBox.cs" />
-    <Compile Include="Assets\Scripts\Game\SelectWindow.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Bag\BagBinder.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Bag\BagWin.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Bag\Main.cs" />
@@ -117,10 +113,10 @@
     <Compile Include="Assets\Scripts\Game\UI\Login\LoginError.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Login\LoginResult.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Login\LoginSystem.cs" />
-    <Compile Include="Assets\Scripts\Game\UI\Login\LoginWindow.cs" />
     <Compile Include="Assets\Scripts\Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugins\3rd\Protobuf\Web\TODO.txt" />
     <None Include="Assets\Resources\Fairy\Shaders\AddOn\FairyGUI-BlurFilter.shader" />
     <None Include="Assets\Resources\Fairy\Shaders\FairyGUI-BMFont.shader" />
     <None Include="Assets\Resources\Fairy\Shaders\FairyGUI-Image.shader" />

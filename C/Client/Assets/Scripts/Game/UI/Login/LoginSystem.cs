@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class LoginSystem: GameSystem {
+public class LoginSystem: GameSystem<LoginSystem> {
     public bool ret;
     public string user;
     public string passWord;

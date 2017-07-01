@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class HomePageWindow: View<LoginSystem> {
+public class HomePageWindow: View {
     HomePage.Main window {
         get {
             return (HomePage.Main)this.panel.ui;
@@ -20,6 +20,6 @@ public class HomePageWindow: View<LoginSystem> {
     }
 
     void Login() {
-        controller.Login(window.user.text, window.psw.text);
+        LoginSystem.Instance.Login(window.user.text, window.psw.text);
     }
 }

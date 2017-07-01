@@ -6,5 +6,6 @@ using System.Text;
 namespace AppCore {
 public class Configuration {
     public RunMode runMode = RunMode.Editor;
+    public int targetFrameRate = 30;
 }
 }

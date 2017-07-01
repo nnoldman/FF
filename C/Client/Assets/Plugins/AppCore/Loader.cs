@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class Loader : GameController {
+public class Loader : BaseController {
     public static Loader Instance {
         internal set;
         get;

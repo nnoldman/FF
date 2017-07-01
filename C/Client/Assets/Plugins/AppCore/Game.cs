@@ -8,19 +8,12 @@ namespace AppCore {
 public class Game {
     private SceneParam mSceneParam;
 
-    public IEnumerator CheckNet() {
-        yield return 0;
-    }
-
-    public IEnumerator CheckVersion() {
-        yield return 0;
-    }
-
     public IEnumerator Start() {
         yield return 0;
     }
+
     public IEnumerator Close() {
-        yield return 0;
+        yield return SystemBase.CloseGameSystems();
     }
 
     public IEnumerator LoadScene(SceneParam param) {

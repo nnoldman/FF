@@ -1,12 +1,20 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class GameSystem : SystemBase, IEventSender {
-    public static T Get<T>() where T : GameSystem {
-        return default(T);
+public class GameSystem<T> : SystemBase, IEventSender where T : SystemBase, new() {
+    public static T Instance {
+        get {
+            if(mInstance == null) {
+                mInstance = new T();
+                mSystems.Add(mInstance);
+            }
+            return mInstance;
+        }
     }
+    public static T mInstance;
 
     public void Trigger(int id, object data) {
         throw new NotImplementedException();

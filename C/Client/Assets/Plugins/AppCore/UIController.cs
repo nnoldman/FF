@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace AppCore {
 
-public class UIController: GameController {
+public class UIController: BaseController {
     public static UIController Instance {
         internal set;
         get;

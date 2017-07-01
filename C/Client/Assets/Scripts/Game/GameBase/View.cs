@@ -5,13 +5,8 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class View<ControllerType> : ViewBase, IEventReceiver where ControllerType: GameSystem {
+public class View : ViewBase, IEventReceiver  {
     protected GameObject owner;
-    public ControllerType controller {
-        get {
-            return GameSystem.Get<ControllerType>();
-        }
-    }
     void IEventReceiver.Bind(int id, Action callback) {
         throw new NotImplementedException();
     }
