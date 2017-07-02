@@ -25,8 +25,8 @@ namespace Basics
 		{
 			base.ConstructFromXML(xml);
 
-			RadioGroup = this.GetController("RadioGroup");
-			tab = this.GetController("tab");
+			RadioGroup = this.GetControllerAt(0);
+			tab = this.GetControllerAt(1);
 		}
 	}
 }

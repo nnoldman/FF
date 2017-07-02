@@ -5,6 +5,6 @@ using System.Linq;
 using System.Text;
 
 public abstract class BaseController {
-    public abstract IEnumerator CloseGameStage();
+    public abstract IEnumerator OnGameStageClose();
     public abstract IEnumerator Initialize();
 }

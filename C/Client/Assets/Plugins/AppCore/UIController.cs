@@ -68,8 +68,10 @@ public class UIController: BaseController {
         yield return null;
     }
 
-    public override IEnumerator CloseGameStage() {
-        yield return null;
+
+        public override IEnumerator OnGameStageClose()
+        {
+            throw new NotImplementedException();
+        }
     }
-}
 }

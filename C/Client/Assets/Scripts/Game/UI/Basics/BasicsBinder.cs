@@ -18,7 +18,6 @@ namespace Basics
 			UIObjectFactory.SetPackageItemExtension(WindowFrameB.URL, typeof(WindowFrameB));
 			UIObjectFactory.SetPackageItemExtension(Button5.URL, typeof(Button5));
 			UIObjectFactory.SetPackageItemExtension(Demo_Button.URL, typeof(Demo_Button));
-			UIObjectFactory.SetPackageItemExtension(Main.URL, typeof(Main));
 			UIObjectFactory.SetPackageItemExtension(WindowFrame.URL, typeof(WindowFrame));
 			UIObjectFactory.SetPackageItemExtension(ComboBoxPopup.URL, typeof(ComboBoxPopup));
 			UIObjectFactory.SetPackageItemExtension(Demo_Label.URL, typeof(Demo_Label));

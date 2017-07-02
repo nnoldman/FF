@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using FairyGUI.Utils;
 using System;
+using UnityEngine;
 
 namespace FairyGUI
 {
@@ -25,6 +26,7 @@ namespace FairyGUI
 
 		internal GComponent parent;
 		internal bool autoRadioGroupDepth;
+		internal bool changing;
 
 		int _selectedIndex;
 		int _previousIndex;
@@ -62,11 +64,15 @@ namespace FairyGUI
 					if (value > _pageIds.Count - 1)
 						throw new IndexOutOfRangeException("" + value);
 
+					changing = true;
+
 					_previousIndex = _selectedIndex;
 					_selectedIndex = value;
 					parent.ApplyController(this);
 
 					onChanged.Call();
+
+					changing = false;
 
 					if (_playingTransition != null)
 					{
@@ -74,7 +80,7 @@ namespace FairyGUI
 						_playingTransition = null;
 					}
 
-					if (_pageTransitions != null)
+					if (_pageTransitions != null && Application.isPlaying)
 					{
 						foreach (PageTransition pt in _pageTransitions)
 						{
@@ -104,9 +110,11 @@ namespace FairyGUI
 				if (value > _pageIds.Count - 1)
 					throw new IndexOutOfRangeException("" + value);
 
+				changing = true;
 				_previousIndex = _selectedIndex;
 				_selectedIndex = value;
 				parent.ApplyController(this);
+				changing = false;
 
 				if (_playingTransition != null)
 				{

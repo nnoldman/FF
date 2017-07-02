@@ -32,7 +32,7 @@ namespace FairyGUI
 		/// <summary>
 		/// Resource using in GRoot.ShowModalWait for locking the screen.
 		/// </summary>
-		public static String globalModalWaiting;
+		public static string globalModalWaiting;
 
 		/// <summary>
 		/// When a modal window is in front, the background becomes dark.
@@ -136,7 +136,7 @@ namespace FairyGUI
 		/// <summary>
 		/// Allow softness on top or left side for scrollpane.
 		/// </summary>
-		public static bool allowSoftnessOnTopOrLeftSide = false;
+		public static bool allowSoftnessOnTopOrLeftSide = true;
 
 		/// <summary>
 		/// When click the window, brings to front automatically.
@@ -157,6 +157,11 @@ namespace FairyGUI
 		/// 
 		/// </summary>
 		public static float frameTimeForAsyncUIConstruction = 0.002f;
+
+		/// <summary>
+		/// 设定默认是否所有文本都从右向左显示（阿拉伯文字）。
+		/// </summary>
+		public static bool rightToLeftText = false;
 
 		public enum ConfigKey
 		{
@@ -184,6 +189,7 @@ namespace FairyGUI
 			AllowSoftnessOnTopOrLeftSide,
 			InputCaretSize,
 			InputHighlightColor,
+			RightToLeftText,
 
 			PleaseSelect = 100
 		}
@@ -332,6 +338,10 @@ namespace FairyGUI
 					case ConfigKey.InputHighlightColor:
 						UIConfig.inputHighlightColor = value.c;
 						break;
+
+					case ConfigKey.RightToLeftText:
+						UIConfig.rightToLeftText = value.b;
+						break;
 				}
 			}
 		}
@@ -351,8 +361,33 @@ namespace FairyGUI
 		}
 
 		public void ApplyModifiedProperties()
-		{ 
+		{
 			//nothing yet
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="url"></param>
+		/// <returns></returns>
+		public delegate AudioClip SoundLoader(string url);
+		static SoundLoader soundLoader = null;
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="loader"></param>
+		public static void SetSoundLoader(SoundLoader loader)
+		{
+			soundLoader = loader;
+		}
+
+		internal static AudioClip LoadSound(string url)
+		{
+			if (soundLoader == null || url.StartsWith(UIPackage.URL_PREFIX))
+				return UIPackage.GetItemAssetByURL(url) as AudioClip;
+			else
+				return soundLoader(url);
 		}
 	}
 }

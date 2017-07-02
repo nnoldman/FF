@@ -51,6 +51,7 @@ namespace FairyGUI
 
 		DisplayObject _touchTarget;
 		DisplayObject _focused;
+		InputTextField _lastInput;
 		UpdateContext _updateContext;
 		List<DisplayObject> _rollOutChain;
 		List<DisplayObject> _rollOverChain;
@@ -237,7 +238,10 @@ namespace FairyGUI
 				if (_focused != null)
 				{
 					if (_focused is InputTextField)
-						((InputTextField)_focused).onFocusIn.Call();
+					{
+						_lastInput = (InputTextField)_focused;
+						_lastInput.onFocusIn.Call();
+					}
 
 					_focused.onRemovedFromStage.AddCapture(_focusRemovedDelegate);
 				}
@@ -246,23 +250,11 @@ namespace FairyGUI
 
 		void OnFocusRemoved(EventContext context)
 		{
-			if (_focused == null)
-				return;
-
 			if (context.sender == _focused)
-				this.focus = null;
-			else
 			{
-				DisplayObject currentObject = _focused.parent;
-				while (currentObject != null)
-				{
-					if (currentObject == context.sender)
-					{
-						this.focus = null;
-						break;
-					}
-					currentObject = currentObject.parent;
-				}
+				if(_focused is InputTextField)
+					_lastInput = null;
+				this.focus = null;
 			}
 		}
 
@@ -403,6 +395,15 @@ namespace FairyGUI
 		/// <summary>
 		/// 
 		/// </summary>
+		public IKeyboard keyboard
+		{
+			get { return _keyboard; }
+			set { _keyboard = value; }
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
 		/// <param name="text"></param>
 		/// <param name="autocorrection"></param>
 		/// <param name="multiline"></param>
@@ -411,10 +412,13 @@ namespace FairyGUI
 		/// <param name="textPlaceholder"></param>
 		/// <param name="keyboardType"></param>
 		/// <param name="hideInput"></param>
-		public void OpenKeyboard(string text, bool autocorrection, bool multiline, bool secure, bool alert, string textPlaceholder, int keyboardType, bool hideInput)
+		public void OpenKeyboard(string text, bool autocorrection, bool multiline, bool secure,
+			bool alert, string textPlaceholder, int keyboardType, bool hideInput)
 		{
 			if (_keyboard != null)
+			{
 				_keyboard.Open(text, autocorrection, multiline, secure, alert, textPlaceholder, keyboardType, hideInput);
+			}
 		}
 
 		/// <summary>
@@ -423,7 +427,19 @@ namespace FairyGUI
 		public void CloseKeyboard()
 		{
 			if (_keyboard != null)
+			{
 				_keyboard.Close();
+			}
+		}
+
+		/// <summary>
+		/// 输入字符到当前光标位置
+		/// </summary>
+		/// <param name="value"></param>
+		public void InputString(string value)
+		{
+			if (_lastInput != null)
+				_lastInput.ReplaceSelection(value);
 		}
 
 		/// <summary>
@@ -685,12 +701,20 @@ namespace FairyGUI
 
 			if (_keyboard != null)
 			{
-				string s = _keyboard.GetInput();
-				if (s != null)
-					textField.ReplaceText(s);
+				if (textField.keyboardInput)
+				{
+					string s = _keyboard.GetInput();
+					if (s != null)
+					{
+						if (_keyboard.supportsCaret)
+							textField.ReplaceSelection(s);
+						else
+							textField.ReplaceText(s);
+					}
 
-				if (_keyboard.done)
-					this.focus = null;
+					if (_keyboard.done)
+						this.focus = null;
+				}
 			}
 			else
 			{

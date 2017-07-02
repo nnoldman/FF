@@ -76,7 +76,10 @@ public class MainSocket {
             _mGameTime = value;
         }
     }
-
+    //连接平台服务器，短连接
+    string mUser;
+    string mPsd;
+    string mServerID;
 
     public MainSocket() {
     }
@@ -97,12 +100,6 @@ public class MainSocket {
     void OnDestroy() {
         Closed(NetEventID.ActiveDisconnect);
     }
-
-    //连接平台服务器，短连接
-    string mUser;
-    string mPsd;
-    string mServerID;
-
 
     public void connectLoginServer(string host, int port, string user, string psd, string serverid) {
         Closed(NetEventID.CloseForInitialize);

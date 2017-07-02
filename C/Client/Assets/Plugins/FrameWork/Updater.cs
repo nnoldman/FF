@@ -72,4 +72,8 @@ public class Updater: BaseController {
     public IEnumerator ProcessError() {
         yield return 0;
     }
+
+    public override IEnumerator OnGameStageClose() {
+        throw new NotImplementedException();
+    }
 }

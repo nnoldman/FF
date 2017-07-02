@@ -7,12 +7,12 @@ namespace HomePage
 {
 	public partial class Main : GComponent
 	{
-		public GButton login;
-		public GButton exit;
 		public GTextInput user;
 		public GTextInput psw;
+		public GButton login;
+		public GButton exit;
 
-		public const string URL = "ui://zbmfvjnxikgk1";
+		public const string URL = "ui://3aca1ugukr711";
 
 		public static Main CreateInstance()
 		{
@@ -27,10 +27,10 @@ namespace HomePage
 		{
 			base.ConstructFromXML(xml);
 
-			login = (GButton)this.GetChild("login");
-			exit = (GButton)this.GetChild("exit");
-			user = (GTextInput)this.GetChild("user");
-			psw = (GTextInput)this.GetChild("psw");
+			user = (GTextInput)this.GetChildAt(3);
+			psw = (GTextInput)this.GetChildAt(4);
+			login = (GButton)this.GetChildAt(5);
+			exit = (GButton)this.GetChildAt(6);
 		}
 	}
 }

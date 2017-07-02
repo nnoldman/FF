@@ -24,7 +24,7 @@ namespace Basics
 		{
 			base.ConstructFromXML(xml);
 
-			bg = (GImage)this.GetChild("bg");
+			bg = (GImage)this.GetChildAt(0);
 		}
 	}
 }

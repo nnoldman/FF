@@ -37,7 +37,6 @@ public class Startup : MonoBehaviour {
     }
 
     void OnDestroy() {
-        StartCoroutine(Flow.Instance.Close());
     }
 }
 
