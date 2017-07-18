@@ -1,9 +1,6 @@
 [submodule "Libs/poco"]
 	path = Libs/poco
 	url = https://github.com/pocoproject/poco
-[submodule "S/Servers"]
-	path = S/Servers
-	url = https://github.com/nnoldman/FFS.git
 [submodule "C"]
 	path = C
 	url = https://github.com/nnoldman/FFC.git
