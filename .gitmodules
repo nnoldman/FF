@@ -1,3 +1,6 @@
 [submodule "Libs/poco"]
 	path = Libs/poco
 	url = https://github.com/pocoproject/poco
+[submodule "S/Servers"]
+	path = S/Servers
+	url = https://github.com/minuowa/Monos.git
