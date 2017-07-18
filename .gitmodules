@@ -7,3 +7,6 @@
 [submodule "Tools"]
 	path = Tools
 	url = https://github.com/nnoldman/FFTools.git
+[submodule "S"]
+	path = S
+	url = https://github.com/nnoldman/FFS
