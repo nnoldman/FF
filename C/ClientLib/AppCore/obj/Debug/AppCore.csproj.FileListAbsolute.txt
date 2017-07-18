@@ -1,5 +1,0 @@
-D:\src\FF\ForFree\C\Client\Assets\Plugins\AppCore.dll
-D:\src\FF\ForFree\C\Client\Assets\Plugins\AppCore.pdb
-D:\src\FF\ForFree\C\ClientLib\AppCore\obj\Debug\AppCore.dll
-D:\src\FF\ForFree\C\ClientLib\AppCore\obj\Debug\AppCore.pdb
-D:\src\FF\ForFree\C\ClientLib\AppCore\obj\Debug\AppCore.csprojResolveAssemblyReference.cache
