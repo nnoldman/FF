@@ -3,7 +3,7 @@
 	url = https://github.com/pocoproject/poco
 [submodule "C"]
 	path = C
-	url = https://github.com/nnoldman/FFC.git
+	url = https://github.com/nnoldman/FFC
 [submodule "Tools"]
 	path = Tools
 	url = https://github.com/nnoldman/FFTools
