@@ -1,0 +1,3 @@
+[submodule "Libs/poco"]
+	path = Libs/poco
+	url = https://github.com/pocoproject/poco
