@@ -98,7 +98,7 @@ message Duration {
   
   string name=3;
 }
-
+option optimize_for = LITE_RUNTIME;
 message RTGameServer {
   string ip = 1;
   int32 port = 2;
