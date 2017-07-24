@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package Cmd;
+option csharp_namespace = "Cmd";
+option go_package = "github.com/golang/protobuf/ptypes/duration";
+option java_package = "com.google.protobuf";
+option java_outer_classname = "DurationProto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+option objc_class_prefix = "GPB";
+
+
+option optimize_for = LITE_RUNTIME;
+
+//test ceshi
+enum CLIENT_COMMAND
+{
+	// xxx
+	RQLogin=0;
+	RQLogin2=1;
+};
+
+enum SERVER_COMMAND
+{
+	RTLogin=0;
+};
