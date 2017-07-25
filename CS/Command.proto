@@ -12,29 +12,40 @@ option java_multiple_files = true;
 option java_generate_equals_and_hash = true;
 option objc_class_prefix = "GPB";
 
-
-
 option optimize_for = LITE_RUNTIME;
-
 
 enum AccountAction {
     AccountAction_None=0;
     AccountAction_Create=1;
     AccountAction_Rename=2;
     AccountAction_Delete=3;
+    AccountAction_Login=4;
 };
 
 enum AccountErrorCode {
     AccountErrorCode_None=0;
-    AccountErrorCode_Sucessed=1;
-    AccountErrorCode_Existed=2;
+    AccountErrorCode_CreateSucessed=1;
+    AccountErrorCode_NameRepeated=2;
+    AccountErrorCode_UserCantFind=3;
+    AccountErrorCode_PasswordError=4;
+    AccountErrorCode_LoginSucessed=5;
 };
 
-enum LoginErrorCode {
-    LoginErrorCode_None=0;
-    Sucessed=1;
-    UserCantFind=2;
-    PasswordError=3;
+message ReqAccountOperation
+{
+    //AccountAction
+    required AccountAction action=1;
+    required string user=2;
+    required string password=3;
+};
+
+message RetAccountOperation
+{
+    //AccountAction
+    required AccountErrorCode error=1;
+    required string user=2;
+    required string password=3;
+    required int32 userid=4;
 };
 
 message RetGameServer {

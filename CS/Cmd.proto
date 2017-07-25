@@ -16,12 +16,13 @@ option optimize_for = LITE_RUNTIME;
 enum CLIENT_COMMAND
 {
 	// xxx
-	RQGameServerInfo=1;
-	RQLogin=2;
+	RQGameServerInfo=100;
+
+	RQAccountOperation=300;
 };
 
 enum SERVER_COMMAND
 {
-	RTLogin=0;
-	RTGameServer=1;
+	RTGameServer=100;
+	RTAccountOperation=300;
 };
