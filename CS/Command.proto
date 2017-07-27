@@ -43,16 +43,7 @@ message RetAccountOperation
 {
     //AccountAction
     required AccountErrorCode error=1;
-    required string user=2;
-    required string password=3;
-    required int32 userid=4;
+    required string password=2;
+    required int32 accountid=3;
 };
 
-message RetGameServer {
-  required string ip = 1;
-  required int32 port = 2;
-}
-
-message ReqGameServer {
-  required int32 serverID=1;
-}
