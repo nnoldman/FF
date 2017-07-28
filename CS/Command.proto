@@ -47,3 +47,9 @@ message RetAccountOperation
     required int32 accountid=3;
 };
 
+
+message ReqLoginGameServer
+{
+    //AccountAction
+    required int32 accountid=1;
+};
