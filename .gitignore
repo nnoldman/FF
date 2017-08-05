@@ -10,3 +10,7 @@
 /Libs/Source
 /Libs/protoc-3.0.0-win32
 /Libs/Projects
+/Libs/src/protobuf-cpp-3.0.0/protobuf-3.0.0
+/Libs/project/protobuf-cpp-3.0.0/protobuf-3.0.0
+/Libs/project
+/Libs/src
