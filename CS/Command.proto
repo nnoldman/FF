@@ -45,6 +45,7 @@ message RetAccountOperation
     required AccountErrorCode error=1;
     required string password=2;
     required int32 accountid=3;
+	repeated int32 late_serverids=4;
 };
 
 
