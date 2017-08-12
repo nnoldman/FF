@@ -19,10 +19,13 @@ enum CLIENT_COMMAND
 	RQLoginGameServer=100;
 
 	RQAccountOperation=300;
+	
+	RQLoginGame=400;
 };
 
 enum SERVER_COMMAND
 {
 	RTLoginGameServer=100;
 	RTAccountOperation=300;
+	RTLoginGame=400;
 };
