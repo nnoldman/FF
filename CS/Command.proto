@@ -33,7 +33,6 @@ enum AccountErrorCode {
 
 message ReqAccountOperation
 {
-    //AccountAction
     required AccountAction action=1;
     required string user=2;
     required string password=3;
@@ -41,17 +40,16 @@ message ReqAccountOperation
 
 message RetAccountOperation
 {
-    //AccountAction
     required AccountErrorCode error=1;
-    required string password=2;
-    required int32 accountid=3;
-	repeated int32 late_serverids=4;
+    required int32 accountid=2;
+	required int32 time=3;
+	required string token=4;
+	repeated int32 late_serverids=5;
 };
 
 
 message ReqLoginGameServer
 {
-    //AccountAction
     required int32 accountid=1;
 	required int32 time=2;
 	required string token=3;
