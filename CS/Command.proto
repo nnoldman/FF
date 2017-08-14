@@ -77,3 +77,27 @@ message RetLoginGameServer
 	required LoginGameServerErrorCode error=1;
 	repeated GameRole roles=2;
 };
+
+message ReqCreateRole
+{
+	required int32 index0=1;
+	required int32 sex=2;
+	required int32 job=3;
+	required string name=4;
+}
+
+enum CreateRoleError
+{
+	CreateRoleError_Sucess=0;
+	CreateRoleError_NameRepeated=1;
+}
+
+message RetCreateRole
+{
+	required CreateRoleError error=1;
+}
+
+message ReqEnterGame
+{
+	required int32 role0=1;
+}

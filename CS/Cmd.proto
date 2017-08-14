@@ -13,7 +13,7 @@ option objc_class_prefix = "GPB";
 option optimize_for = LITE_RUNTIME;
 
 //test ceshi
-enum CLIENT_COMMAND
+enum CLIENTID
 {
 	// xxx
 	RQLoginGameServer=100;
@@ -21,11 +21,14 @@ enum CLIENT_COMMAND
 	RQAccountOperation=300;
 	
 	RQLoginGame=400;
+	
+	RQCreateRole=500;
 };
 
-enum SERVER_COMMAND
+enum SERVERID
 {
 	RTLoginGameServer=100;
 	RTAccountOperation=300;
 	RTLoginGame=400;
+	RTCreateRole=500;
 };
