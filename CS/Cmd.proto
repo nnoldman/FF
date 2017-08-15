@@ -23,6 +23,8 @@ enum CLIENTID
 	RQLoginGame=400;
 	
 	RQCreateRole=500;
+	
+	RQEnterGame=600;
 };
 
 enum SERVERID
@@ -31,4 +33,5 @@ enum SERVERID
 	RTAccountOperation=300;
 	RTLoginGame=400;
 	RTCreateRole=500;
+	RTMainUser=600;
 };

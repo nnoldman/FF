@@ -4,4 +4,5 @@ cd CS
 protoc  --cpp_out=../S/PKG Command.proto
 protoc  --cpp_out=../S/PKG Cmd.proto
 protogen  -i:Command.proto -o:../C/Client/Assets/Scripts/Command.cs 
-protogen  -i:Cmd.proto -o:../C/Client/Assets/Scripts/Cmd.cs 
+protogen  -i:Cmd.proto -o:../C/Client/Assets/Scripts/Cmd.cs
+pause 
